@@ -26,7 +26,7 @@ namespace ShopEx01.UnitTest.RepositoryTest
         public void PostCategory_Repository_GetAll()
         {
             var list = objRepository.GetAll().ToList();
-            Assert.AreEqual(2, list.Count);
+            Assert.AreEqual(3, list.Count);
         }
 
         [TestMethod]
@@ -41,7 +41,7 @@ namespace ShopEx01.UnitTest.RepositoryTest
             unitOfWork.Commit();
 
             Assert.IsNotNull(result);
-            Assert.AreEqual(3, result.ID);
+            Assert.AreEqual(4, result.ID);
         }
     }
 }
