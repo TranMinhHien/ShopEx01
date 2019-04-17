@@ -1,9 +1,10 @@
-﻿using ShopEx01.Model.Models;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using ShopEx01.Model.Models;
 using System.Data.Entity;
 
 namespace ShopEx01.Data
 {
-    public class ShopEx01DbContext : DbContext
+    public class ShopEx01DbContext : IdentityDbContext<ApplicationUser>
     {
         public ShopEx01DbContext() : base("ShopEx01Connection")
         {
@@ -32,9 +33,15 @@ namespace ShopEx01.Data
         public DbSet<VisitorStatistic> VisitorStatistics { set; get; }
         public DbSet<Error> Errors { set; get; }
 
+        public static ShopEx01DbContext Create()
+        {
+            return new ShopEx01DbContext();
+        }
+
         protected override void OnModelCreating(DbModelBuilder builder)
         {
-
+            builder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId });
+            builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId);
         }
     }
 }
