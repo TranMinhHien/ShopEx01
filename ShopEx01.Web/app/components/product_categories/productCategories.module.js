@@ -12,6 +12,7 @@
             url: "/product_categories",
             templateUrl: "/app/components/product_categories/productCategoryListView.html",
             controller: "productCategoryListController"
+
         });
     }
 })();
