@@ -14,7 +14,8 @@
             var config = {
                 params: {
                     page: page,
-                    pageSize: 2
+                    pageSize: 2 //thay doi phan trang
+
                 }
             }
             apiService.get('/api/productcategory/getall', config, function (result) {
