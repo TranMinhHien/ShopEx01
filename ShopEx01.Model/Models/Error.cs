@@ -15,5 +15,6 @@ namespace ShopEx01.Model.Models
         public string StrackTrace { set; get; }
 
         public DateTime CreatedDate { set; get; }
+        public string StackTrace { get; set; }
     }
 }

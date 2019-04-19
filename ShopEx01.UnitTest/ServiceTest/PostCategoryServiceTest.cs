@@ -64,6 +64,7 @@ namespace ShopEx01.UnitTest.ServiceTest
             Assert.IsNotNull(result);
             Assert.AreEqual(1, result.ID);
 
+
         }
     }
 }

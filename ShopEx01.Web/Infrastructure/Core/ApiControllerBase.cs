@@ -1,18 +1,19 @@
-﻿using ShopEx01.Model.Models;
-using ShopEx01.Service;
-using System;
+﻿using System;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using ShopEx01.Model.Models;
+using ShopEx01.Service;
 
 namespace ShopEx01.Web.Infrastructure.Core
 {
     public class ApiControllerBase : ApiController
     {
         private IErrorService _errorService;
+
         public ApiControllerBase(IErrorService errorService)
         {
             this._errorService = errorService;
@@ -43,13 +44,14 @@ namespace ShopEx01.Web.Infrastructure.Core
                 LogError(dbEx);
                 response = requestMessage.CreateResponse(HttpStatusCode.BadRequest, dbEx.InnerException.Message);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 LogError(ex);
                 response = requestMessage.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
             }
             return response;
         }
+
         private void LogError(Exception ex)
         {
             try
@@ -57,13 +59,12 @@ namespace ShopEx01.Web.Infrastructure.Core
                 Error error = new Error();
                 error.CreatedDate = DateTime.Now;
                 error.Message = ex.Message;
-                error.StrackTrace = ex.StackTrace;
+                error.StackTrace = ex.StackTrace;
                 _errorService.Create(error);
                 _errorService.Save();
             }
             catch
             {
-
             }
         }
     }

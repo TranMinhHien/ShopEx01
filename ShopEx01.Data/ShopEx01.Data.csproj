@@ -73,6 +73,10 @@
     <Compile Include="Migrations\201904171126441_Intergrate-AspnetIdentity.Designer.cs">
       <DependentUpon>201904171126441_Intergrate-AspnetIdentity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904191529484_UpdateAgain.cs" />
+    <Compile Include="Migrations\201904191529484_UpdateAgain.Designer.cs">
+      <DependentUpon>201904191529484_UpdateAgain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ErrorRepository.cs" />
@@ -118,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904171126441_Intergrate-AspnetIdentity.resx">
       <DependentUpon>201904171126441_Intergrate-AspnetIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904191529484_UpdateAgain.resx">
+      <DependentUpon>201904191529484_UpdateAgain.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

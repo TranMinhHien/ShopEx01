@@ -18,6 +18,7 @@ namespace ShopEx01.Web
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
+
             );
         }
     }

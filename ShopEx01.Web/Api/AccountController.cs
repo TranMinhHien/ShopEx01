@@ -62,5 +62,7 @@ namespace ShopEx01.Web.Api
             var result = await SignInManager.PasswordSignInAsync(userName, password, rememberMe, shouldLockout: false);
             return request.CreateResponse(HttpStatusCode.OK, result);
         }
+
+
     }
 }
