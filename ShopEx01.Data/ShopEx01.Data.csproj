@@ -81,6 +81,14 @@
     <Compile Include="Migrations\201904200307133_updateagain2.Designer.cs">
       <DependentUpon>201904200307133_updateagain2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904202224171_AddTagField.cs" />
+    <Compile Include="Migrations\201904202224171_AddTagField.Designer.cs">
+      <DependentUpon>201904202224171_AddTagField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904202342154_addTag2.cs" />
+    <Compile Include="Migrations\201904202342154_addTag2.Designer.cs">
+      <DependentUpon>201904202342154_addTag2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ErrorRepository.cs" />
@@ -132,6 +140,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904200307133_updateagain2.resx">
       <DependentUpon>201904200307133_updateagain2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904202224171_AddTagField.resx">
+      <DependentUpon>201904202224171_AddTagField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904202342154_addTag2.resx">
+      <DependentUpon>201904202342154_addTag2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
