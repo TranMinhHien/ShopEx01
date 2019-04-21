@@ -5,8 +5,6 @@ the original writeup about the project.
 
 ## Contact
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/makeusabrew/bootbox?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
 The easiest thing is to [find me on twitter @makeusabrew](http://twitter.com/makeusabrew).
 
 ## Contributing
@@ -25,56 +23,46 @@ The project is also hosted on [Travis CI](https://travis-ci.org/makeusabrew/boot
 pull requests **please** ensure your tests pass as failing requests will be rejected. See the
 [CONTRIBUTING](https://github.com/makeusabrew/bootbox/blob/master/CONTRIBUTING.md) file for more information.
 
-## A note on Bootstrap dependencies
+## Building a minified release
 
-Bootbox **5.0.0** is the first release to support Bootstrap 4.0.0.
+The repository no longer contains a minified bootbox.min.js file - this is now only generated
+[for releases](https://github.com/makeusabrew/bootbox/releases). To build your own minified copy
+for use in development simply run ```npm install``` if you haven't already, followed by ```grunt uglify```.
+This will generate a bootbox.min.js file in your working directory.
+
+## A note on Bootstrap dependencies
 
 Bootbox **4.0.0** is the first release to support Bootstrap 3.0.0.
 
 Bootbox **3.3.0** is the *last* release to support Bootstrap 2.2.x.
 
-Much more dependency information can be found [on the Bootbox website](http://bootboxjs.com/getting-started.html#bootbox-dependencies).
+Much more dependency information can be found [on the Bootbox website](http://bootboxjs.com/#dependencies).
 
-### 5.1.1 (Latest Release)
+### Roadmap
 
-- Adds `rows` as a prompt option when setting `inputType` to `textarea`.
+The latest major release of Bootbox - 4.0.0 - involved a total rewrite of the
+internal code and introduced an entirely new public API. It has not re-implemented
+some functionality from the 3.x series as of yet; this will be addressed in the
+the form of new minor releases. Please feel free to add feedback and requests.
 
-#### 5.1.0
+There is no new major (e.g. 5.x) release on the roadmap at present.
 
-- Adds `scrollable` option, which enables the scrollable modal content added in Bootstrap 4.3
-- Adds `extra-large` as a size option
-- Adds aliased/alternative keys for all size options: `sm`, `lg`, `xl`
+### Latest Release: 4.4.0
 
-#### 5.0.1
-
-- Adds Tamil locale
-
-#### 5.0.0
-
-- Updates Bootbox to be compatible with both Bootstrap 4 and Bootstrap 3.
-- Pulls button locale options to separate file
-- Corrects Russion locale
-- Changes default button trigger to target the button with the `bootbox-accept` class; this corrects instances where no button has the `btn-primary` class.
-- Various bugfixes
-
-#### Prompt
-
-- Adds new input types for prompt:
-  - radio
-  - range
-- Adds prompt input constraints for `min`, `max`, `step`, `maxlength`, `pattern`, and `required`
-- Adds `pattern` option for prompt inputs
-- Allows `message` option for prompt
-- Allows `multiple` option for prompt (when using the `select` input type)
-- Refactors prompt function to use the same dialog factory as alert and confirm.
-
-#### Dialog options
-
-- Adds `locale` option - allows locale to be set on a dialog-by-dialog basis
-- Adds `swapButtonOrder` option to allow reversing the default button order
-- Adds `centerVertical` option - adds support for vertically-centered dialogs (requires Bootstrap 4)
-
-
+* Allow `backdrop` options of `true` and `false` to dismiss modals
+* Pass dialog as `this` value in callbacks
+* Bootstrap 3.3.2 compatibility
+* jQuery 1.11.2 compatibility
+* Add support for `maxlength` prompt input attribute
+* Gracefully detect lack of Bootstrap library rather than crashing
+* Expose `addLocale` and `removeLocale` for custom locale settings
+* Expose `setLocale` helper to select a locale rather than using `setDefaults("locale", ...)`
+* Add Hungarian locale
+* Add Croatian locale
+* Add Bulgarian locale
+* Add Thai locale
+* Add Persian locale
+* Add Albanian locale
 
 For a full list of releases and changes please see [the changelog](https://github.com/makeusabrew/bootbox/blob/master/CHANGELOG.md).
 
@@ -82,7 +70,7 @@ For a full list of releases and changes please see [the changelog](https://githu
 
 (The MIT License)
 
-Copyright (C) 2011-2019 by Nick Payne <nick@kurai.co.uk>
+Copyright (C) 2011-2015 by Nick Payne <nick@kurai.co.uk>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

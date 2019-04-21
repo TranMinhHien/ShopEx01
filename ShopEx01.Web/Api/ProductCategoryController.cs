@@ -15,6 +15,7 @@ using System.Web.Script.Serialization;
 namespace ShopEx01.Web.Api
 {
     [RoutePrefix("api/productcategory")]
+    [Authorize]
     public class ProductCategoryController : ApiControllerBase
     {
         #region Initialize
@@ -102,6 +103,7 @@ namespace ShopEx01.Web.Api
                     var newProductCategory = new ProductCategory();
                     newProductCategory.UpdateProductCategory(productCategoryVm);
                     newProductCategory.CreatedDate = DateTime.Now;
+                    newProductCategory.CreatedBy = User.Identity.Name;
                     _productCategoryService.Add(newProductCategory);
                     _productCategoryService.Save();
 
@@ -131,7 +133,7 @@ namespace ShopEx01.Web.Api
 
                     dbProductCategory.UpdateProductCategory(productCategoryVm);
                     dbProductCategory.UpdatedDate = DateTime.Now;
-
+                    dbProductCategory.UpdatedBy = User.Identity.Name;
                     _productCategoryService.Update(dbProductCategory);
                     _productCategoryService.Save();
 
