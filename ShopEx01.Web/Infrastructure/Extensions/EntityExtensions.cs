@@ -1,5 +1,6 @@
 ﻿using ShopEx01.Model.Models;
 using ShopEx01.Web.Models;
+using System;
 
 namespace ShopEx01.Web.Infrastructure.Extensions
 {
@@ -92,6 +93,15 @@ namespace ShopEx01.Web.Infrastructure.Extensions
             product.Status = productVm.Status;
             product.Tags = productVm.Tags;
             product.Quantity = productVm.Quantity;
+        }
+
+        public static void UpdateFeedback(this Feedback feedback, FeedbackViewModel feedbackVm)
+        {
+            feedback.Name = feedbackVm.Name;
+            feedback.Email = feedbackVm.Email;
+            feedback.Message = feedbackVm.Message;
+            feedback.Status = feedbackVm.Status;
+            feedback.CreatedDate = DateTime.Now;
         }
     }
 }
