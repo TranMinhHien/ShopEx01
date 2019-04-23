@@ -12,11 +12,12 @@ namespace ShopEx01.Web
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
             routes.MapRoute(
-         name: "Login",
-         url: "dang-nhap.html",
-         defaults: new { controller = "Account", action = "Login", id = UrlParameter.Optional },
-         namespaces: new string[] { "ShopEx01.Web.Controllers" }
+            name: "Search",
+            url: "tim-kiem.html",
+            defaults: new { controller = "Product", action = "Search", id = UrlParameter.Optional },
+            namespaces: new string[] { "ShopEx01.Web.Controllers" }
      );
             routes.MapRoute(
            name: "About",
