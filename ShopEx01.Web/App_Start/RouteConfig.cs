@@ -37,6 +37,13 @@ namespace ShopEx01.Web
             );
 
             routes.MapRoute(
+            name: "Register",
+            url: "dang-ky.html",
+            defaults: new { controller = "Account", action = "Register", id = UrlParameter.Optional },
+                namespaces: new string[] { "ShopEx01.Web.Controllers" }
+            );
+
+            routes.MapRoute(
             name: "Page",
             url: "trang/{alias}.html",
             defaults: new { controller = "Page", action = "Index", alias = UrlParameter.Optional },
