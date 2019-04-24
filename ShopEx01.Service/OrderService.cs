@@ -3,9 +3,6 @@ using ShopEx01.Data.Repositories;
 using ShopEx01.Model.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShopEx01.Service
 {

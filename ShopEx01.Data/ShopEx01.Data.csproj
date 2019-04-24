@@ -117,8 +117,24 @@
     <Compile Include="Migrations\201904241021093_AddCustomerID.Designer.cs">
       <DependentUpon>201904241021093_AddCustomerID.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904241507441_RenameTableIdentity.cs" />
+    <Compile Include="Migrations\201904241507441_RenameTableIdentity.Designer.cs">
+      <DependentUpon>201904241507441_RenameTableIdentity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904241517203_AddGroupUser.cs" />
+    <Compile Include="Migrations\201904241517203_AddGroupUser.Designer.cs">
+      <DependentUpon>201904241517203_AddGroupUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904242157009_adddataagaintofix.cs" />
+    <Compile Include="Migrations\201904242157009_adddataagaintofix.Designer.cs">
+      <DependentUpon>201904242157009_adddataagaintofix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ApplicationGroupRepository.cs" />
+    <Compile Include="Repositories\ApplicationRoleGroupRepository.cs" />
+    <Compile Include="Repositories\ApplicationRoleRepository.cs" />
+    <Compile Include="Repositories\ApplicationUserGroupRepository.cs" />
     <Compile Include="Repositories\ContactDetailRepository.cs" />
     <Compile Include="Repositories\ErrorRepository.cs" />
     <Compile Include="Repositories\FeedbackRepository.cs" />
@@ -197,6 +213,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904241021093_AddCustomerID.resx">
       <DependentUpon>201904241021093_AddCustomerID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904241507441_RenameTableIdentity.resx">
+      <DependentUpon>201904241507441_RenameTableIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904241517203_AddGroupUser.resx">
+      <DependentUpon>201904241517203_AddGroupUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904242157009_adddataagaintofix.resx">
+      <DependentUpon>201904242157009_adddataagaintofix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

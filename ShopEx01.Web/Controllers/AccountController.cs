@@ -7,8 +7,6 @@ using ShopEx01.Model.Models;
 using ShopEx01.Web.App_Start;
 using ShopEx01.Web.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;

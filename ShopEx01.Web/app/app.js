@@ -3,7 +3,10 @@
 (function () {
     angular.module('shopex01',
         ['shopex01.products',
+            'shopex01.application_groups',
             'shopex01.product_categories',
+            'shopex01.application_roles',
+            'shopex01.application_users',
             'shopex01.common'])
         .config(config)
         .config(configAuthentication);
