@@ -21,6 +21,7 @@ namespace ShopEx01.Web.Mappings
                 cfg.CreateMap<Slide, SlideViewModel>();
                 cfg.CreateMap<Page, PageViewModel>();
                 cfg.CreateMap<ContactDetail, ContactDetailViewModel>();
+                
             });
 
            /* Mapper.Initialize(cfg =>
