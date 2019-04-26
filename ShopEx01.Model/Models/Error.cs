@@ -12,9 +12,8 @@ namespace ShopEx01.Model.Models
 
         public string Message { set; get; }
 
-        public string StrackTrace { set; get; }
+        public string StackTrace { set; get; }
 
         public DateTime CreatedDate { set; get; }
-        public string StackTrace { get; set; }
     }
 }

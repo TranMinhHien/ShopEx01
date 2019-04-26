@@ -18,6 +18,7 @@ namespace ShopEx01.Service
         IEnumerable<PostCategory> GetAllByParentId(int parentId);
 
         PostCategory GetById(int id);
+
         void Save();
     }
 

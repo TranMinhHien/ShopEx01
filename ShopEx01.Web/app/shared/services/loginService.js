@@ -35,4 +35,5 @@
                 authData.authenticationData.userName = "";
             }
         }]);
+
 })(angular.module('shopex01.common'));

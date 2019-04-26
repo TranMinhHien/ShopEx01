@@ -11,4 +11,5 @@
 
         return authDataFactory;
     }]);
+
 })(angular.module('shopex01.common'));

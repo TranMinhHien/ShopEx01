@@ -123,4 +123,6 @@ namespace ShopEx01.Web.App_Start
             return owinManager;
         }
     }
+
+
 }

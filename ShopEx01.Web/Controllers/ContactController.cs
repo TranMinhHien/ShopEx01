@@ -28,7 +28,7 @@ namespace ShopEx01.Web.Controllers
         }
 
         [HttpPost]
-        [CaptchaValidation("CaptchaCode", "contactCaptcha", "Mã xác nhận không đúng")]        
+        [CaptchaValidation("CaptchaCode", "contactCaptcha", "Mã xác nhận không đúng")]
         public ActionResult SendFeedback(FeedbackViewModel feedbackViewModel)
         {
             if (ModelState.IsValid)

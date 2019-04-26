@@ -39,4 +39,5 @@
 
         loadRoles();
     }
+
 })(angular.module('shopex01.application_roles'));

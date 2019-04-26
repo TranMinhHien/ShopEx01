@@ -12,4 +12,5 @@
 
         //authenticationService.validateRequest();
     }
+
 })(angular.module('shopex01'));

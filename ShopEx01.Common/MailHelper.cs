@@ -39,7 +39,7 @@ namespace ShopEx01.Common
 
                 return true;
             }
-            catch (SmtpException)
+            catch (SmtpException smex)
             {
 
                 return false;

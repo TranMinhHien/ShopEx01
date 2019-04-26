@@ -16,9 +16,9 @@ using System.Web.Http;
 
 namespace ShopEx01.Web.Api
 {
-    
-    [RoutePrefix("api/applicationUser")]
+
     [Authorize]
+    [RoutePrefix("api/applicationUser")]
     public class ApplicationUserController : ApiControllerBase
     {
         private ApplicationUserManager _userManager;

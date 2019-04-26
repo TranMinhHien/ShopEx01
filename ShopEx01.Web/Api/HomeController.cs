@@ -18,7 +18,7 @@ namespace ShopEx01.Web.Api
         [Route("TestMethod")]
         public string TestMethod()
         {
-            return "Hello, Member. ";
+            return "Hello, TEDU Member. ";
         }
     }
 }

@@ -46,6 +46,7 @@ namespace ShopEx01.Model.Models
 
         [ForeignKey("CustomerId")]
         public virtual ApplicationUser User { set; get; }
+
         public virtual IEnumerable<OrderDetail> OrderDetails { set; get; }
     }
 }

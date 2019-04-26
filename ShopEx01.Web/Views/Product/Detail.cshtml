@@ -1,9 +1,7 @@
 ﻿@model ShopEx01.Web.Models.ProductViewModel
 
 @{
-    ViewBag.Title = Model.Name;
-    ViewBag.MetaKeyword = Model.MetaKeyword;
-    ViewBag.MetaDescription = Model.MetaDescription;
+    ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/Layouts.cshtml";
 }
 <link href="~/Assets/client/css/etalage.css" rel="stylesheet" />
@@ -92,7 +90,7 @@
             <div class="tag">
                 <h5>Tag :</h5>
                 <ul class="taglist">
-                    @foreach (var tag in (IEnumerable<ShopEx01.Web.Models.TagViewModel>)ViewBag.Tags)
+                    @foreach (var tag in (IEnumerable<TeduShop.Web.Models.TagViewModel>)ViewBag.Tags)
                     {
                         <li><a href="/tag/@(tag.ID).html">@(tag.Name), </a></li>
                     }
@@ -117,7 +115,7 @@
         <div class="clearfix"> </div>
     </div>
     @{
-        var relatedProducts = (IEnumerable<ShopEx01.Web.Models.ProductViewModel>)ViewBag.RelatedProducts;
+        var relatedProducts = (IEnumerable<TeduShop.Web.Models.ProductViewModel>)ViewBag.RelatedProducts;
     }
     <ul id="flexiselDemo1">
         @foreach (var product in relatedProducts)

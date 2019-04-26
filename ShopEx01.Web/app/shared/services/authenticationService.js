@@ -46,4 +46,5 @@
             this.init();
         }
     ]);
+
 })(angular.module('shopex01.common'));

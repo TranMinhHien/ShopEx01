@@ -41,4 +41,5 @@
             displayInfo: displayInfo
         }
     }
+
 })(angular.module('shopex01.common'));

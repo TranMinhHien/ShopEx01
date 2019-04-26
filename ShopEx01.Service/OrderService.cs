@@ -37,7 +37,7 @@ namespace ShopEx01.Service
                 _unitOfWork.Commit();
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw;
             }

@@ -7,11 +7,10 @@ namespace ShopEx01.Model.Models
     public class Footer
     {
         [Key]
-        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [MaxLength(50)]
         public string ID { set; get; }
 
-        [Required]//The Required attribute can be applied to one or more properties in an entity class.
+        [Required]
         public string Content { set; get; }
     }
 }

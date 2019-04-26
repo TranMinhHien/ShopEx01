@@ -47,4 +47,5 @@
         loadGroups();
         loadDetail();
     }
+
 })(angular.module('shopex01.application_users'));

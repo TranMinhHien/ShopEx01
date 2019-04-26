@@ -113,4 +113,5 @@
 
         $scope.search();
     }
+
 })(angular.module('shopex01.application_roles'));
