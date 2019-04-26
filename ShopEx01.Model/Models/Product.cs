@@ -32,6 +32,7 @@ namespace ShopEx01.Model.Models
         public decimal Price { set; get; }
 
         public decimal? PromotionPrice { set; get; }
+
         public int? Warranty { set; get; }
 
         [MaxLength(500)]
@@ -45,6 +46,8 @@ namespace ShopEx01.Model.Models
         public string Tags { set; get; }
 
         public int Quantity { set; get; }
+
+        public decimal OriginalPrice { set; get; }
 
         [ForeignKey("CategoryID")]
         public virtual ProductCategory ProductCategory { set; get; }

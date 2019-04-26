@@ -20,7 +20,6 @@
         function loadProductDetail() {
             apiService.get('api/product/getbyid/' + $stateParams.id, null, function (result) {
                 console.log(result.data);
-                console.log(result.data);
                 $scope.product = result.data;
                 $scope.moreImages = JSON.parse($scope.product.MoreImages);
             }, function (error) {
@@ -53,7 +52,6 @@
             }
             finder.popup();
         }
-        /// hoàn thiện code sau nay
         $scope.ChooseMoreImage = function () {
             var finder = new CKFinder();
             finder.selectActionFunction = function (fileUrl) {
@@ -67,4 +65,5 @@
         loadProductCategory();
         loadProductDetail();
     }
+
 })(angular.module('shopex01.products'));

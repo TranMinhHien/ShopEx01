@@ -26,7 +26,39 @@
             //  This method will be called after migrating to the latest version.
             CreatePage(context);
             CreateContactDetail(context);
+            CreateConfigTitle(context);
 
+        }
+
+        private void CreateConfigTitle(ShopEx01DbContext context)
+        {
+            if (!context.SystemConfigs.Any(x => x.Code == "HomeTitle"))
+            {
+                context.SystemConfigs.Add(new SystemConfig()
+                {
+                    Code = "HomeTitle",
+                    ValueString = "Trang chủ Shop",
+
+                });
+            }
+            if (!context.SystemConfigs.Any(x => x.Code == "HomeMetaKeyword"))
+            {
+                context.SystemConfigs.Add(new SystemConfig()
+                {
+                    Code = "HomeMetaKeyword",
+                    ValueString = "Trang chủ Shop",
+
+                });
+            }
+            if (!context.SystemConfigs.Any(x => x.Code == "HomeMetaDescription"))
+            {
+                context.SystemConfigs.Add(new SystemConfig()
+                {
+                    Code = "HomeMetaDescription",
+                    ValueString = "Trang chủ Shop",
+
+                });
+            }
         }
         private void CreateUser(ShopEx01DbContext context)
         {
@@ -77,7 +109,6 @@
         {
             if (context.Footers.Count(x => x.ID == CommonConstants.DefaultFooterId) == 0)
             {
-                string content = "";
             }
         }
         private void CreateSlide(ShopEx01DbContext context)

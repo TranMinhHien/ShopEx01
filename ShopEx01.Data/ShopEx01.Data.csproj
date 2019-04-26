@@ -129,6 +129,10 @@
     <Compile Include="Migrations\201904242157009_adddataagaintofix.Designer.cs">
       <DependentUpon>201904242157009_adddataagaintofix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904251033166_ChangeOrderDetail.cs" />
+    <Compile Include="Migrations\201904251033166_ChangeOrderDetail.Designer.cs">
+      <DependentUpon>201904251033166_ChangeOrderDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ApplicationGroupRepository.cs" />
@@ -222,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904242157009_adddataagaintofix.resx">
       <DependentUpon>201904242157009_adddataagaintofix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904251033166_ChangeOrderDetail.resx">
+      <DependentUpon>201904251033166_ChangeOrderDetail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

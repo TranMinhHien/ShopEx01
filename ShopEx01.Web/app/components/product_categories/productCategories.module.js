@@ -1,4 +1,5 @@
-﻿/// <reference path="/Assets/admin/libs/angular/angular.js" />
+﻿/// <reference path="../../../assets/admin/libs/angular/angular.js" />
+
 
 (function () {
     angular.module('shopex01.product_categories', ['shopex01.common']).config(config);
