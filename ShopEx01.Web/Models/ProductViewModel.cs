@@ -2,7 +2,7 @@
 
 namespace ShopEx01.Web.Models
 {
-   [Serializable]
+   //[Serializable]
     public class ProductViewModel
     {
         public int ID { set; get; }
