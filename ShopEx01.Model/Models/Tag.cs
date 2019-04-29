@@ -20,4 +20,5 @@ namespace ShopEx01.Model.Models
         [Required]
         public string Type { set; get; }
     }
+
 }

@@ -14,6 +14,9 @@
 
         function GetSeoTitle() {
             $scope.productCategory.Alias = commonService.getSeoTitle($scope.productCategory.Name);
+
+            alert($stateParams.id);
+            console.log($stateParams.id);
         }
 
         function loadProductCategoryDetail() {

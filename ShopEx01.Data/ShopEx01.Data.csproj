@@ -46,6 +46,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,25 +62,9 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201904141813469_InitialDB.cs" />
-    <Compile Include="Migrations\201904141813469_InitialDB.Designer.cs">
-      <DependentUpon>201904141813469_InitialDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904142216505_AddErrorTable.cs" />
-    <Compile Include="Migrations\201904142216505_AddErrorTable.Designer.cs">
-      <DependentUpon>201904142216505_AddErrorTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904171126441_Intergrate-AspnetIdentity.cs" />
-    <Compile Include="Migrations\201904171126441_Intergrate-AspnetIdentity.Designer.cs">
-      <DependentUpon>201904171126441_Intergrate-AspnetIdentity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904191529484_UpdateAgain.cs" />
-    <Compile Include="Migrations\201904191529484_UpdateAgain.Designer.cs">
-      <DependentUpon>201904191529484_UpdateAgain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904200307133_updateagain2.cs" />
-    <Compile Include="Migrations\201904200307133_updateagain2.Designer.cs">
-      <DependentUpon>201904200307133_updateagain2.cs</DependentUpon>
+    <Compile Include="Migrations\201904281544558_dataagain1.cs" />
+    <Compile Include="Migrations\201904281544558_dataagain1.Designer.cs">
+      <DependentUpon>201904281544558_dataagain1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -104,7 +89,9 @@
     <Compile Include="ShopEx01DbContext.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -118,20 +105,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904141813469_InitialDB.resx">
-      <DependentUpon>201904141813469_InitialDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904142216505_AddErrorTable.resx">
-      <DependentUpon>201904142216505_AddErrorTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904171126441_Intergrate-AspnetIdentity.resx">
-      <DependentUpon>201904171126441_Intergrate-AspnetIdentity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904191529484_UpdateAgain.resx">
-      <DependentUpon>201904191529484_UpdateAgain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904200307133_updateagain2.resx">
-      <DependentUpon>201904200307133_updateagain2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904281544558_dataagain1.resx">
+      <DependentUpon>201904281544558_dataagain1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
