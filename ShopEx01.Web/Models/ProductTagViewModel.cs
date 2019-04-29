@@ -15,4 +15,5 @@ namespace ShopEx01.Web.Models
 
         public virtual TagViewModel Tag { set; get; }
     }
+
 }
