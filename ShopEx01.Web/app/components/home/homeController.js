@@ -4,4 +4,5 @@
     function homeController() {
 
     }
+
 })(angular.module('shopex01'));
