@@ -31,5 +31,4 @@
         loadParentCategory();
     }
 
-
 })(angular.module('shopex01.product_categories'));
