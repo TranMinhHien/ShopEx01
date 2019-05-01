@@ -210,6 +210,7 @@
     <Compile Include="Infrastructure\Core\PaginationSet.cs" />
     <Compile Include="Infrastructure\Extensions\EntityExtensions.cs" />
     <Compile Include="Mappings\AutoMapperConfiguration.cs" />
+    <Compile Include="Models\FooterViewModel.cs" />
     <Compile Include="Models\ProductCategoryViewModel.cs" />
     <Compile Include="Models\PostCategoryViewModel.cs" />
     <Compile Include="Models\PostTagViewModel.cs" />
@@ -4041,6 +4042,7 @@
     <Content Include="Assets\client\fonts\fontawesome-webfont.svg" />
     <Content Include="Assets\client\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Assets\client\images\404\404.png" />
+    <Content Include="Assets\client\images\arrow1.png" />
     <Content Include="Assets\client\images\blog\blog-one.jpg" />
     <Content Include="Assets\client\images\blog\blog-three.jpg" />
     <Content Include="Assets\client\images\blog\blog-two.jpg" />
@@ -4353,8 +4355,6 @@
     <Content Include="Assets\client\fonts\glyphicons-halflings-regular.woff" />
     <None Include="packages.config" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\Layouts.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Footer.cshtml" />
