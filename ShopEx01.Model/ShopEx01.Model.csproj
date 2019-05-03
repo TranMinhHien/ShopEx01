@@ -57,6 +57,7 @@
     <Compile Include="Abstract\Auditable.cs" />
     <Compile Include="Abstract\IAuditable.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\Brand.cs" />
     <Compile Include="Models\Error.cs" />
     <Compile Include="Models\Footer.cs" />
     <Compile Include="Models\Menu.cs" />
@@ -81,6 +82,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ShopEx01.Common\ShopEx01.Common.csproj">
+      <Project>{4a7d0c81-c270-494c-9c39-cafa3f1f9c07}</Project>
+      <Name>ShopEx01.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -17,6 +17,7 @@ namespace ShopEx01.Web.Mappings
                 cfg.CreateMap<Product, ProductViewModel>();
                 cfg.CreateMap<ProductTag, ProductTagViewModel>();
                 cfg.CreateMap<Footer, FooterViewModel>();
+                cfg.CreateMap<Slide, SlideViewModel>();
             });
 
         }

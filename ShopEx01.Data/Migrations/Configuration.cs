@@ -1,11 +1,7 @@
 ﻿namespace ShopEx01.Data.Migrations
 {
-    using Microsoft.AspNet.Identity;
-    using Microsoft.AspNet.Identity.EntityFramework;
     using ShopEx01.Model.Models;
-    using System;
     using System.Collections.Generic;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
@@ -19,35 +15,40 @@
         protected override void Seed(ShopEx01.Data.ShopEx01DbContext context)
         {
             CreateProductCategorySample(context);
+            CreateUser(context);
+            CreateSlide(context);
             //This method will be called after migrating to the latest version.
-
-          var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ShopEx01DbContext()));
-
-            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ShopEx01DbContext()));
-
-            var user = new ApplicationUser()
-            {
-                UserName = "shop",
-                Email = "shop.international@gmail.com",
-                EmailConfirmed = true,
-                BirthDay = DateTime.Now,
-                FullName = "Technology Shop"
-
-            };
-
-            manager.Create(user, "123456");
-
-            if (!roleManager.Roles.Any())
-            {
-                roleManager.Create(new IdentityRole { Name = "Admin" });
-                roleManager.Create(new IdentityRole { Name = "User" });
-            }
-
-            var adminUser = manager.FindByEmail("shop.international@gmail.com");
-
-            manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
-
         }
+
+        private void CreateUser(ShopEx01DbContext context)
+        {
+            //var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ShopEx01DbContext()));
+
+            //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ShopEx01DbContext()));
+
+            //var user = new ApplicationUser()
+            //{
+            //    UserName = "shop",
+            //    Email = "shop.international@gmail.com",
+            //    EmailConfirmed = true,
+            //    BirthDay = DateTime.Now,
+            //    FullName = "Technology Shop"
+
+            //};
+
+            //manager.Create(user, "123456");
+
+            //if (!roleManager.Roles.Any())
+            //{
+            //    roleManager.Create(new IdentityRole { Name = "Admin" });
+            //    roleManager.Create(new IdentityRole { Name = "User" });
+            //}
+
+            //var adminUser = manager.FindByEmail("shop.international@gmail.com");
+
+            //manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
+        }
+
         private void CreateProductCategorySample(ShopEx01.Data.ShopEx01DbContext context)
         {
             if (context.ProductCategories.Count() == 0)
@@ -64,6 +65,21 @@
                 context.SaveChanges();
             }
 
+        }
+
+        private void CreateSlide(ShopEx01DbContext context)
+        {
+            if (context.Slides.Count() == 0)
+            {
+                List<Slide> listSlide = new List<Slide>()
+                {
+                    new Slide() {Name="Slide1", DisplayOrder=1, Status=true, Url="#", Image="Assets/client/images/home/girl1.jpg"},
+                    new Slide() {Name="Slide2", DisplayOrder=2, Status=true, Url="#", Image="Assets/client/images/home/girl2.jpg"},
+                    new Slide() {Name="Slide3", DisplayOrder=3, Status=true, Url="#", Image="Assets/client/images/home/girl3.jpg"}
+                };
+                context.Slides.AddRange(listSlide);
+                context.SaveChanges();
+            }
         }
     }
 }
