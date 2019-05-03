@@ -3,7 +3,7 @@ namespace ShopEx01.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class dataagain1 : DbMigration
+    public partial class AdDataDESKTOP9JQMC14 : DbMigration
     {
         public override void Up()
         {
@@ -103,6 +103,7 @@ namespace ShopEx01.Data.Migrations
                         HomeFlag = c.Boolean(),
                         HotFlag = c.Boolean(),
                         ViewCount = c.Int(),
+                        Tags = c.String(),
                         CreatedDate = c.DateTime(),
                         CreatedBy = c.String(maxLength: 256),
                         UpdatedDate = c.DateTime(),

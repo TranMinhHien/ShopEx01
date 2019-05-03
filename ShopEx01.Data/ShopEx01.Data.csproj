@@ -62,13 +62,9 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201904281544558_dataagain1.cs" />
-    <Compile Include="Migrations\201904281544558_dataagain1.Designer.cs">
-      <DependentUpon>201904281544558_dataagain1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904291127140_AddProductTag.cs" />
-    <Compile Include="Migrations\201904291127140_AddProductTag.Designer.cs">
-      <DependentUpon>201904291127140_AddProductTag.cs</DependentUpon>
+    <Compile Include="Migrations\201905030508074_AdDataDESKTOP9JQMC14.cs" />
+    <Compile Include="Migrations\201905030508074_AdDataDESKTOP9JQMC14.Designer.cs">
+      <DependentUpon>201905030508074_AdDataDESKTOP9JQMC14.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,11 +105,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904281544558_dataagain1.resx">
-      <DependentUpon>201904281544558_dataagain1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904291127140_AddProductTag.resx">
-      <DependentUpon>201904291127140_AddProductTag.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905030508074_AdDataDESKTOP9JQMC14.resx">
+      <DependentUpon>201905030508074_AdDataDESKTOP9JQMC14.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

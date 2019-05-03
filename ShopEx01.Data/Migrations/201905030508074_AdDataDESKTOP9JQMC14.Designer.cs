@@ -7,13 +7,13 @@ namespace ShopEx01.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddProductTag : IMigrationMetadata
+    public sealed partial class AdDataDESKTOP9JQMC14 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddProductTag));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AdDataDESKTOP9JQMC14));
         
         string IMigrationMetadata.Id
         {
-            get { return "201904291127140_AddProductTag"; }
+            get { return "201905030508074_AdDataDESKTOP9JQMC14"; }
         }
         
         string IMigrationMetadata.Source

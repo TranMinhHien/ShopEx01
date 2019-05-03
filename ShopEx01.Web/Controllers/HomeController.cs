@@ -45,9 +45,12 @@ namespace ShopEx01.Web.Controllers
         [ChildActionOnly]
         public ActionResult Footer()
         {
-            var footerModel = _commonService.GetFooter();
-            var footerViewModel = Mapper.Map<Footer, FooterViewModel>(footerModel);
-            return PartialView(footerViewModel);
+            //var footerModel = _commonService.GetFooter();
+            //var footerViewModel = Mapper.Map<Footer, FooterViewModel>(footerModel);
+            //return PartialView(footerViewModel);
+            var model = _productCategoryService.GetAll();
+            var listProductCategoryViewModel = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(model);
+            return PartialView(listProductCategoryViewModel);
         }
 
         [ChildActionOnly]
