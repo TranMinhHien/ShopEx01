@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ShopEx01.Model.Models
@@ -13,6 +14,9 @@ namespace ShopEx01.Model.Models
         [Required]
         [MaxLength(256)]
         public string Name { set; get; }
+        [Required]
+        [MaxLength(256)]
+        public string Alias { set; get; }
 
         [MaxLength(256)]
         public string Description { set; get; }
@@ -24,6 +28,8 @@ namespace ShopEx01.Model.Models
         public string Url { set; get; }
 
         public int? DisplayOrder { set; get; }
+        public DateTime? CreatedDate { set; get; }
+        public DateTime? UpdatedDate { set; get; }
 
         public bool Status { set; get; }
 

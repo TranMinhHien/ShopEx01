@@ -39,6 +39,13 @@
                 console.log('Cannot get list parent');
             });
         }
+        function loadBrand() {
+            apiService.get('api/brand/getallparents', null, function (result) {
+                $scope.productCategories = result.data;
+            }, function () {
+                console.log('Cannot get list parent');
+            });
+        }
         $scope.ChooseImage = function () {
             var finder = new CKFinder();
             finder.selectActionFunction = function (fileUrl) {
@@ -62,6 +69,7 @@
             finder.popup();
         }
         loadProductCategory();
+        loadBrand();
     }
 
-})(angular.module('shopex01.product_categories'));
+})(angular.module('shopex01.products'));

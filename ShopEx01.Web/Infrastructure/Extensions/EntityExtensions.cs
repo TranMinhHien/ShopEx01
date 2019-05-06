@@ -73,6 +73,7 @@ namespace ShopEx01.Web.Infrastructure.Extensions
             product.Description = productVm.Description;
             product.Alias = productVm.Alias;
             product.CategoryID = productVm.CategoryID;
+            product.BrandID = productVm.BrandID;
             product.Content = productVm.Content;
             product.Image = productVm.Image;
             product.MoreImages = productVm.MoreImages;
@@ -91,6 +92,36 @@ namespace ShopEx01.Web.Infrastructure.Extensions
             product.MetaDescription = productVm.MetaDescription;
             product.Status = productVm.Status;
             product.Tags = productVm.Tags;
+        }
+
+        public static void UpdateSlide(this Slide slide, SlideViewModel slideVm)
+        {
+            slide.ID = slideVm.ID;
+            slide.Name = slideVm.Name;
+            slide.Alias = slideVm.Alias;
+            slide.Description = slideVm.Description;
+            slide.Image = slideVm.Image;
+            slide.Url = slideVm.Url;
+            slide.Content = slideVm.Content; 
+            slide.DisplayOrder = slideVm.DisplayOrder;
+            slide.CreatedDate = slideVm.CreatedDate;
+            slide.Status = slideVm.Status;
+            slide.UpdatedDate = slideVm.UpdatedDate;
+        }
+
+        public static void UpdateBrand(this Brand brand, BrandViewModel brandVm)
+        {
+            brand.ID = brandVm.ID;
+            brand.Name = brandVm.Name;
+            brand.Description = brandVm.Description;
+            brand.Alias = brandVm.Alias;
+            brand.CreatedDate = brandVm.CreatedDate;
+            brand.CreatedBy = brandVm.CreatedBy;
+            brand.UpdatedDate = brandVm.UpdatedDate;
+            brand.UpdatedBy = brandVm.UpdatedBy;
+            brand.MetaKeyword = brandVm.MetaKeyword;
+            brand.MetaDescription = brandVm.MetaDescription;
+            brand.Status = brandVm.Status;            
         }
     }
 }

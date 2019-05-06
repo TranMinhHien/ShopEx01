@@ -11,6 +11,7 @@ namespace ShopEx01.Web.Models
         public string Alias { set; get; }
 
         public int CategoryID { set; get; }
+        public int BrandID { set; get; }
 
         public string Image { set; get; }
 

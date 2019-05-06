@@ -79,6 +79,10 @@ namespace ShopEx01.Web.Controllers
             var model = _productCategoryService.GetAll();
             var listProductCategoryViewModel = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable< ProductCategoryViewModel >> (model);
             return PartialView(listProductCategoryViewModel);
+
+            //var model = _productCategoryService.GetAll();
+            //var listProductCategoryViewModel = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(model);
+            //return PartialView(listProductCategoryViewModel);
         }
     }
 }

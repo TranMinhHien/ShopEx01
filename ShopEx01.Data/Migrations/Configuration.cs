@@ -1,6 +1,9 @@
 ﻿namespace ShopEx01.Data.Migrations
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using ShopEx01.Model.Models;
+    using System;
     using System.Collections.Generic;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -17,6 +20,7 @@
             CreateProductCategorySample(context);
             CreateUser(context);
             CreateSlide(context);
+            CreateBrand(context);
             //This method will be called after migrating to the latest version.
         }
 
@@ -78,6 +82,20 @@
                     new Slide() {Name="Slide3", DisplayOrder=3, Status=true, Url="#", Image="Assets/client/images/home/girl3.jpg"}
                 };
                 context.Slides.AddRange(listSlide);
+                context.SaveChanges();
+            }
+        }
+        private void CreateBrand(ShopEx01DbContext context)
+        {
+            if (context.Brands.Count()==0)
+            {
+                List<Brand> listBrand = new List<Brand>()
+                {
+                    new Brand() {Name="Dell", Status=true, Alias="dell"},
+                    new Brand() {Name="HP", Status=true, Alias="hp"},
+                    new Brand() {Name="ASUS", Status=true, Alias="asus"}
+                };
+                context.Brands.AddRange(listBrand);
                 context.SaveChanges();
             }
         }

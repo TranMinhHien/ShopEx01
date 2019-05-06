@@ -2,6 +2,8 @@
     angular.module('shopex01',
         ['shopex01.products',
             'shopex01.product_categories',
+            'shopex01.slides',
+            'shopex01.brands',
             'shopex01.common'])
         .config(config)
         .config(configAuthentication);

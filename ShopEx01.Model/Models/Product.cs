@@ -22,6 +22,9 @@ namespace ShopEx01.Model.Models
         [Required]
         public int CategoryID { set; get; }
 
+        [Required]
+        public int BrandID { set; get; }
+
         [MaxLength(256)]
         public string Image { set; get; }
 
@@ -45,6 +48,9 @@ namespace ShopEx01.Model.Models
 
         [ForeignKey("CategoryID")]
         public virtual ProductCategory ProductCategory { set; get; }
+
+        [ForeignKey("BrandID")]
+        public virtual Brand Brand { set; get; }
     }
 
 }

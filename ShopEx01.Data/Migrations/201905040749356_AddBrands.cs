@@ -3,10 +3,28 @@ namespace ShopEx01.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AdDataDESKTOP9JQMC14 : DbMigration
+    public partial class AddBrands : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Brands",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false, maxLength: 256),
+                        Alias = c.String(nullable: false, maxLength: 256),
+                        Description = c.String(maxLength: 500),
+                        CreatedDate = c.DateTime(),
+                        CreatedBy = c.String(maxLength: 256),
+                        UpdatedDate = c.DateTime(),
+                        UpdatedBy = c.String(maxLength: 256),
+                        MetaKeyword = c.String(maxLength: 256),
+                        MetaDescription = c.String(maxLength: 256),
+                        Status = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID);
+            
             CreateTable(
                 "dbo.Errors",
                 c => new
@@ -93,6 +111,7 @@ namespace ShopEx01.Data.Migrations
                         Name = c.String(nullable: false, maxLength: 256),
                         Alias = c.String(nullable: false, maxLength: 256),
                         CategoryID = c.Int(nullable: false),
+                        BrandID = c.Int(nullable: false),
                         Image = c.String(maxLength: 256),
                         MoreImages = c.String(storeType: "xml"),
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
@@ -113,8 +132,10 @@ namespace ShopEx01.Data.Migrations
                         Status = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Brands", t => t.BrandID, cascadeDelete: true)
                 .ForeignKey("dbo.ProductCategories", t => t.CategoryID, cascadeDelete: true)
-                .Index(t => t.CategoryID);
+                .Index(t => t.CategoryID)
+                .Index(t => t.BrandID);
             
             CreateTable(
                 "dbo.ProductCategories",
@@ -275,6 +296,7 @@ namespace ShopEx01.Data.Migrations
                         Url = c.String(maxLength: 256),
                         DisplayOrder = c.Int(),
                         Status = c.Boolean(nullable: false),
+                        Content = c.String(),
                     })
                 .PrimaryKey(t => t.ID);
             
@@ -380,6 +402,7 @@ namespace ShopEx01.Data.Migrations
             DropForeignKey("dbo.Posts", "CategoryID", "dbo.PostCategories");
             DropForeignKey("dbo.OrderDetails", "ProductID", "dbo.Products");
             DropForeignKey("dbo.Products", "CategoryID", "dbo.ProductCategories");
+            DropForeignKey("dbo.Products", "BrandID", "dbo.Brands");
             DropForeignKey("dbo.OrderDetails", "OrderID", "dbo.Orders");
             DropForeignKey("dbo.Menus", "GroupID", "dbo.MenuGroups");
             DropIndex("dbo.IdentityUserLogins", new[] { "ApplicationUser_Id" });
@@ -391,6 +414,7 @@ namespace ShopEx01.Data.Migrations
             DropIndex("dbo.PostTags", new[] { "TagID" });
             DropIndex("dbo.PostTags", new[] { "PostID" });
             DropIndex("dbo.Posts", new[] { "CategoryID" });
+            DropIndex("dbo.Products", new[] { "BrandID" });
             DropIndex("dbo.Products", new[] { "CategoryID" });
             DropIndex("dbo.OrderDetails", new[] { "ProductID" });
             DropIndex("dbo.OrderDetails", new[] { "OrderID" });
@@ -418,6 +442,7 @@ namespace ShopEx01.Data.Migrations
             DropTable("dbo.MenuGroups");
             DropTable("dbo.Footers");
             DropTable("dbo.Errors");
+            DropTable("dbo.Brands");
         }
     }
 }

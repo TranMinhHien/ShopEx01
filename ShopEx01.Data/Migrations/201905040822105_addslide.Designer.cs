@@ -7,13 +7,13 @@ namespace ShopEx01.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddSlideContext : IMigrationMetadata
+    public sealed partial class addslide : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddSlideContext));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addslide));
         
         string IMigrationMetadata.Id
         {
-            get { return "201905031941457_AddSlideContext"; }
+            get { return "201905040822105_addslide"; }
         }
         
         string IMigrationMetadata.Source

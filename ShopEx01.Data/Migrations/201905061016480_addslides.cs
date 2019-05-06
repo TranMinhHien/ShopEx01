@@ -3,16 +3,16 @@ namespace ShopEx01.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddSlideContext : DbMigration
+    public partial class addslides : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.Slides", "Content", c => c.String());
+            AlterColumn("dbo.Slides", "Alias", c => c.String(nullable: false, maxLength: 256));
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Slides", "Content");
+            AlterColumn("dbo.Slides", "Alias", c => c.String(maxLength: 256));
         }
     }
 }
