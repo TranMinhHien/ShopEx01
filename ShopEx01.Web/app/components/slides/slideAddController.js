@@ -8,13 +8,15 @@
             CreatedDate: new Date(),
             Status: true,
         }
+        $scope.ckeditorOptions = {
+            languague: 'vi',
+            height: '200px'
+        }
         $scope.GetSeoTitle = GetSeoTitle;
-
+        $scope.AddSlide = AddSlide;
         function GetSeoTitle() {
             $scope.slide.Alias = commonService.getSeoTitle($scope.slide.Name);
         }
-
-        $scope.AddSlide = AddSlide;
 
         function AddSlide() {
             
@@ -30,11 +32,12 @@
             var finder = new CKFinder();
             finder.selectActionFunction = function (fileUrl) {
                 $scope.$apply(function () {
-                    $scope.product.Image = fileUrl;
+                    $scope.slide.Image = fileUrl;
                 })
             }
             finder.popup();
         }
+        
         //function loadParentCategory() {
         //    apiService.get('api/productcategory/getallparents', null, function (result) {
         //        $scope.parentCategories = result.data;

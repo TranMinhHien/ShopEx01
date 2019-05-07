@@ -14,17 +14,26 @@ namespace ShopEx01.Service
     {
         Footer GetFooter();
         IEnumerable<Slide> GetSlides();
+        IEnumerable<Brand> GetBrands();
+
     }
     public class CommonService : ICommonService
     {
         IFooterRepository _footerRepository;
         IUnitOfWork _unitOfWork;
         ISlideRepository _slideRepository;
-        public CommonService(IFooterRepository footerRepository, IUnitOfWork unitOfWork,ISlideRepository slideRepository)
+        IBrandRepository _brandRepository;
+        public CommonService(IFooterRepository footerRepository, IUnitOfWork unitOfWork,ISlideRepository slideRepository, IBrandRepository brandRepository)
         {
             _footerRepository = footerRepository;
             _unitOfWork = unitOfWork;
             _slideRepository = slideRepository;
+            _brandRepository = brandRepository;
+        }
+
+        public IEnumerable<Brand> GetBrands()
+        {
+            return _brandRepository.GetMulti(x => x.Status);
         }
 
         public Footer GetFooter()

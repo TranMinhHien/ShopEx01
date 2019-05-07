@@ -33,6 +33,16 @@
                     notificationService.displayError('Cập nhật không thành công.');
                 });
         }
+        $scope.ChooseImage = function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $scope.$apply(function () {
+                    $scope.slide.Image = fileUrl;
+                })
+            }
+            finder.popup();
+        }
+
         //function loadParentCategory() {
         //    apiService.get('api/productcategory/getallparents', null, function (result) {
         //        $scope.parentCategories = result.data;

@@ -18,6 +18,7 @@ namespace ShopEx01.Service
         IEnumerable<ProductCategory> GetAll(string keyword);
 
         IEnumerable<ProductCategory> GetAllByParentId(int parentId);
+        IEnumerable<ProductCategory> GetProductCategory();
 
         ProductCategory GetById(int id);
 
@@ -67,6 +68,11 @@ namespace ShopEx01.Service
         public ProductCategory GetById(int id)
         {
             return _ProductCategoryRepository.GetSingleById(id);
+        }
+
+        public IEnumerable<ProductCategory> GetProductCategory()
+        {
+            return _ProductCategoryRepository.GetMulti(x => x.Status);
         }
 
         public void Save()

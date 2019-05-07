@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Home | E-Shopper</title>
-    
+
     <link href="~/Assets/client/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/Assets/client/css/font-awesome.min.css" rel="stylesheet">
     <link href="~/Assets/client/css/prettyPhoto.css" rel="stylesheet">
@@ -28,10 +28,11 @@
     <!--/header-->
     @{ Html.RenderAction("Header", "Home");}
 
-   @RenderSection("homeProducts", required: false);
+    @RenderSection("homeProducts", required: false);
 
     <section>
         <div class="container">
+
             <div class="row">
                 <!--left-sidebar-->
                 @{ Html.RenderAction("Category", "Home");}
@@ -429,7 +430,7 @@
     <!--Footer-->
     @{ Html.RenderAction("Footer", "Home");}
 
-    
+
     <script src="~/Assets/client/js/jquery.js"></script>
     <script src="~/Assets/client/js/bootstrap.min.js"></script>
     <script src="~/Assets/client/js/jquery.scrollUp.min.js"></script>

@@ -213,6 +213,7 @@
     <Compile Include="Infrastructure\Extensions\EntityExtensions.cs" />
     <Compile Include="Mappings\AutoMapperConfiguration.cs" />
     <Compile Include="Models\BrandViewModel.cs" />
+    <Compile Include="Models\CategoryViewModel.cs" />
     <Compile Include="Models\FooterViewModel.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\ProductCategoryViewModel.cs" />
@@ -4378,7 +4379,6 @@
     <Content Include="Views\Shared\Footer.cshtml" />
     <Content Include="Views\Shared\Header.cshtml" />
     <Content Include="Views\Shared\Category.cshtml" />
-    <Content Include="Views\Shared\Brand.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShopEx01.Common\ShopEx01.Common.csproj">

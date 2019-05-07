@@ -13,13 +13,11 @@
             height: '200px'
         }
         $scope.AddProduct = AddProduct;
-
         $scope.GetSeoTitle = GetSeoTitle;
 
         function GetSeoTitle() {
             $scope.product.Alias = commonService.getSeoTitle($scope.product.Name);
         }
-
 
         function AddProduct() {
 
@@ -41,7 +39,7 @@
         }
         function loadBrand() {
             apiService.get('api/brand/getallparents', null, function (result) {
-                $scope.productCategories = result.data;
+                $scope.brands = result.data;
             }, function () {
                 console.log('Cannot get list parent');
             });

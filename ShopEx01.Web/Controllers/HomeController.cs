@@ -55,13 +55,10 @@ namespace ShopEx01.Web.Controllers
 
             return View();
         }
-
+        
         [ChildActionOnly]
         public ActionResult Footer()
-        {
-            //var footerModel = _commonService.GetFooter();
-            //var footerViewModel = Mapper.Map<Footer, FooterViewModel>(footerModel);
-            //return PartialView(footerViewModel);
+        {            
             var model = _productCategoryService.GetAll();
             var listProductCategoryViewModel = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(model);
             return PartialView(listProductCategoryViewModel);
@@ -76,13 +73,15 @@ namespace ShopEx01.Web.Controllers
         [ChildActionOnly]
         public ActionResult Category()
         {
-            var model = _productCategoryService.GetAll();
-            var listProductCategoryViewModel = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable< ProductCategoryViewModel >> (model);
-            return PartialView(listProductCategoryViewModel);
+            var brandModel = _commonService.GetBrands();
+            var brandView = Mapper.Map<IEnumerable<Brand>, IEnumerable<BrandViewModel>>(brandModel);
+            var categoryViewModel = new CategoryViewModel();
+            categoryViewModel.Brands = brandView;
 
-            //var model = _productCategoryService.GetAll();
-            //var listProductCategoryViewModel = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(model);
-            //return PartialView(listProductCategoryViewModel);
+            var productCategoryModel = _productCategoryService.GetProductCategory();
+            var productCategoryViewModel = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(productCategoryModel);
+            categoryViewModel.ProductCategory = productCategoryViewModel;
+            return View(categoryViewModel);
         }
     }
 }
