@@ -1,5 +1,4 @@
-﻿/// <reference path="/Assets/admin/libs/angular/angular.js" />
-
+﻿
 (function (app) {
     app.factory('commonService', commonService);
 

@@ -78,9 +78,20 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="search_box pull-right">
-                        <input type="text" placeholder="Tìm kiếm" />
-                    </div>
+                    <form class="navbar-form pull-right" method="get" action="/tim-kiem.html">
+                        <div class="input-group">
+                            <input type="text" id="txtKeyword" name="keyword" class="form-control" placeholder="Từ khóa tìm kiếm" />
+                            <span class="input-group-btn">
+                                <button type="submit" id="btnSearch" class="btn btn-default">Tìm Kiếm</button>
+                            </span>
+                        </div>
+                    </form>
+                    @*<div class="search">
+                            <div class="search_box pull-right">
+                                <input type="text" id="txtKeyword" placeholder="Từ khóa tìm kiếm">
+                                <input type="submit" value="Tìm Kiếm" id="btnSearch">
+                            </div>
+                        </div>*@
                 </div>
             </div>
         </div>
