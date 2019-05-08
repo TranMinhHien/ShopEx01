@@ -34,7 +34,7 @@ namespace ShopEx01.Web.Api
         {
             return CreateHttpResponse(request, () =>
             {
-                var model = _productCategoryService.GetAll();
+                var model = _productCategoryService.GetParent();
 
                 var responseData = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(model);
 

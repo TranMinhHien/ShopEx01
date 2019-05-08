@@ -14,6 +14,7 @@ namespace ShopEx01.Service
         ProductCategory Delete(int id);
 
         IEnumerable<ProductCategory> GetAll();
+        IEnumerable<ProductCategory> GetParent();
 
         IEnumerable<ProductCategory> GetAll(string keyword);
 
@@ -68,6 +69,11 @@ namespace ShopEx01.Service
         public ProductCategory GetById(int id)
         {
             return _ProductCategoryRepository.GetSingleById(id);
+        }
+
+        public IEnumerable<ProductCategory> GetParent()
+        {
+            return _ProductCategoryRepository.GetMulti(x => x.Status && x.ParentID != null);
         }
 
         public IEnumerable<ProductCategory> GetProductCategory()

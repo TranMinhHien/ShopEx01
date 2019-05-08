@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace ShopEx01.Common
 {
-    public class ConfigHelper
-    {
-        public static string GetByKey(string key)
+        public class ConfigHelper
         {
-            return ConfigurationManager.AppSettings[key].ToString();
+            public static string GetByKey(string key)
+            {
+                return ConfigurationManager.AppSettings[key].ToString();
+            }
         }
-    }
-
 }

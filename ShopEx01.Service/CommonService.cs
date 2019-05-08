@@ -15,6 +15,7 @@ namespace ShopEx01.Service
         Footer GetFooter();
         IEnumerable<Slide> GetSlides();
         IEnumerable<Brand> GetBrands();
+        IEnumerable<Tag> GetTags();
 
     }
     public class CommonService : ICommonService
@@ -23,12 +24,14 @@ namespace ShopEx01.Service
         IUnitOfWork _unitOfWork;
         ISlideRepository _slideRepository;
         IBrandRepository _brandRepository;
-        public CommonService(IFooterRepository footerRepository, IUnitOfWork unitOfWork,ISlideRepository slideRepository, IBrandRepository brandRepository)
+        ITagRepository _tagRepository;
+        public CommonService(IFooterRepository footerRepository, IUnitOfWork unitOfWork,ISlideRepository slideRepository, IBrandRepository brandRepository, ITagRepository tagRepository)
         {
             _footerRepository = footerRepository;
             _unitOfWork = unitOfWork;
             _slideRepository = slideRepository;
             _brandRepository = brandRepository;
+            _tagRepository = tagRepository;
         }
 
         public IEnumerable<Brand> GetBrands()
@@ -45,6 +48,10 @@ namespace ShopEx01.Service
         {
             return _slideRepository.GetMulti(x=>x.Status);
         }
-    }
 
+        public IEnumerable<Tag> GetTags()
+        {
+            return _tagRepository.GetAll();
+        }
+    }
 }

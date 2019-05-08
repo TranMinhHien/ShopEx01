@@ -5,10 +5,10 @@ using System.Web;
 
 namespace ShopEx01.Web.Models
 {
-    public class FooterViewModel
+    public class CategorytabViewModel
     {
         public IEnumerable<TagViewModel> Tags { set; get; }
-        public IEnumerable<ProductCategoryViewModel> ProductCategory { set; get; }
+        public IEnumerable<ProductTagViewModel> ProductTags { set; get; }
+        public IEnumerable<ProductViewModel> Products { set; get; }
     }
-
 }

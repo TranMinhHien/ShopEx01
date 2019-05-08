@@ -33,8 +33,8 @@ namespace ShopEx01.Web.Controllers
             var homeViewModel = new HomeViewModel();
             homeViewModel.Slides = slideView;
 
-            var lastestProductModel = _productService.GetLastest(3);
-            var topSaleProductModel = _productService.GetHotProduct(3);
+            var lastestProductModel = _productService.GetLastest(6);
+            var topSaleProductModel = _productService.GetHotProduct(6);
             var lastestProductViewModel = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(lastestProductModel);
             var topSaleProductViewModel = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(topSaleProductModel);
             homeViewModel.LastestProducts = lastestProductViewModel;
@@ -58,12 +58,22 @@ namespace ShopEx01.Web.Controllers
         
         [ChildActionOnly]
         public ActionResult Footer()
-        {            
-            var model = _productCategoryService.GetAll();
-            var listProductCategoryViewModel = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(model);
-            return PartialView(listProductCategoryViewModel);
-        }
+        {
+            //var model = _productCategoryService.GetAll();
+            //var listProductCategoryViewModel = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(model);
+            //return PartialView(listProductCategoryViewModel);
 
+            var tagModel = _commonService.GetTags();
+            var tagView = Mapper.Map<IEnumerable<Tag>, IEnumerable<TagViewModel>>(tagModel);
+            var footerViewModel = new FooterViewModel();
+            footerViewModel.Tags = tagView;
+
+            var productCategoryModel = _productCategoryService.GetProductCategory();
+            var productCategoryViewModel = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(productCategoryModel);
+            footerViewModel.ProductCategory = productCategoryViewModel;
+            return View(footerViewModel);
+        }
+        
         [ChildActionOnly]
         public ActionResult Header()
         {
