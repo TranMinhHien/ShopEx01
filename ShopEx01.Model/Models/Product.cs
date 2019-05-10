@@ -1,4 +1,5 @@
 ﻿using ShopEx01.Model.Abstract;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -45,12 +46,14 @@ namespace ShopEx01.Model.Models
         public int? ViewCount { set; get; }
 
         public string Tags { set; get; }
+        public int Quantity { set; get; }
 
         [ForeignKey("CategoryID")]
         public virtual ProductCategory ProductCategory { set; get; }
 
         [ForeignKey("BrandID")]
         public virtual Brand Brand { set; get; }
+        public virtual IEnumerable<ProductTag> ProductTags { set; get; }
     }
 
 }

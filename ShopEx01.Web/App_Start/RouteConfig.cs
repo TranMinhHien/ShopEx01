@@ -83,8 +83,8 @@ namespace ShopEx01.Web
             );
             routes.MapRoute(
                 name: "TagList",
-                url: "{id}.html",
-                defaults: new { controller = "Product", action = "ListByTag", id = UrlParameter.Optional },
+                url: "tag/{tagId}.html",
+                defaults: new { controller = "Product", action = "ListByTag", tagId = UrlParameter.Optional },
                 namespaces: new string[] { "ShopEx01.Web.Controllers" }
             );
 

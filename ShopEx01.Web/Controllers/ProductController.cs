@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 
 namespace ShopEx01.Web.Controllers
 {
@@ -24,7 +25,15 @@ namespace ShopEx01.Web.Controllers
         // GET: Product
         public ActionResult Detail(int id)
         {
-            return View();
+            var productModel = _productService.GetById(id);
+            var viewModel = Mapper.Map<Product, ProductViewModel>(productModel);
+            var relatedProduct = _productService.GetReatedProducts(id, 6);
+            ViewBag.RelatedProducts = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(relatedProduct);
+
+            List<string> listImages = new JavaScriptSerializer().Deserialize<List<string>>(viewModel.MoreImages);
+            ViewBag.MoreImages = listImages;
+            ViewBag.Tags = Mapper.Map<IEnumerable<Tag>, IEnumerable<TagViewModel>>(_productService.GetListTagByProductId(id));
+            return View(viewModel);
         }
         public ActionResult Category(int id, int page = 1, string sort = "")
         {
@@ -47,9 +56,25 @@ namespace ShopEx01.Web.Controllers
 
             return View(paginationSet);
         }
-        public ActionResult ListByTag(int id)
+        public ActionResult ListByTag(string tagId, int page = 1)
         {
-            return View();
+            int pageSize = int.Parse(ConfigHelper.GetByKey("PageSize"));
+            int totalRow = 0;
+            var productModel = _productService.GetListProductByTag(tagId, page, pageSize, out totalRow);
+            var productViewModel = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(productModel);
+            int totalPage = (int)Math.Ceiling((double)totalRow / pageSize);
+
+            ViewBag.Tag = Mapper.Map<Tag, TagViewModel>(_productService.GetTag(tagId));
+            var paginationSet = new PaginationSet<ProductViewModel>()
+            {
+                Items = productViewModel,
+                MaxPage = int.Parse(ConfigHelper.GetByKey("MaxPage")),
+                Page = page,
+                TotalCount = totalRow,
+                TotalPages = totalPage
+            };
+
+            return View(paginationSet);
         }
 
         public ActionResult Search(string keyword, int page = 1, string sort = "")

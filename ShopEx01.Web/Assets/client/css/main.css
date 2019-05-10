@@ -13,6 +13,12 @@ body {
 }
 
 
+h1.b{
+    word-wrap: break-word;
+}
+h4.b {
+    word-wrap: break-word;
+}
 .wnav ul {
     list-style-type: none;
     margin: 0;

@@ -1,33 +1,27 @@
 ﻿@model ShopEx01.Web.Infrastructure.Core.PaginationSet<ShopEx01.Web.Models.ProductViewModel>
 
 @{
-    ViewBag.Title = "Category";
+    var tag = (ShopEx01.Web.Models.TagViewModel)ViewBag.Tag;
+    ViewBag.Title = "Kết quả tìm kiếm cho tag " + tag.Name;
     Layout = "~/Views/Shared/Layouts.cshtml";
-    var category = (ShopEx01.Web.Models.ProductCategoryViewModel)ViewBag.Category;
 }
+
 
 <div class="col-sm-12 padding-right">
     @if (Model.Count > 0)
     {
         <div class="w_content">
             <div class="women">
-                <a href="/@(category.Alias).pc-@(category.ID).html"><h4>@category.Name - <span>@Model.TotalCount sản phẩm</span> </h4></a>
-                <ul class="w_nav">
-                    <li>Sắp xếp : </li>
-                    <li><a class="active" href="?page=@Model.Page&sort=popular">Phổ biến</a></li> |
-                    <li><a href="?page=@Model.Page&sort=new">Mới </a></li> |
-                    <li><a href="?page=@Model.Page&sort=discount">Khuyến mãi</a></li> |
-                    <li><a href="?page=@Model.Page&sort=price">Giá: Thấp -> Cao </a></li>
-                    <div class="clearfix"> </div>
-                </ul>
+                <a href=""><h4>Tag: @tag.Name - <span>@Model.TotalCount sản phẩm</span> </h4></a>
+                
                 <div class="clearfix"> </div>
             </div>
         </div>
-    
+
         <div class="features_items">
             <!--features_items-->
             <h2></h2>
-            <h2 class="title text-center b">@category.Name</h2>
+            <h2 class="title text-center">Kết quả tìm kiếm</h2>
             <div class="clearfix"></div>
             @foreach (var product in Model.Items)
             {
@@ -37,8 +31,8 @@
                         <div class="single-products">
                             <div class="productinfo text-center">
                                 <img src="@product.Image" alt="@product.Name" />
-                                <h2>VNĐ @(product.Price == 0 ? "Liên hệ" : product.Price.ToString("N0"))</h2>
-                                <h4 class="b">@product.Name</h4>
+                                <h2>@(product.Price == 0 ? "Liên hệ" : product.Price.ToString("N2"))</h2>
+                                <p>@product.Name</p>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
                             </div>
                         </div>

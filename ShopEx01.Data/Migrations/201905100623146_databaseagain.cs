@@ -3,7 +3,7 @@ namespace ShopEx01.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddBrands : DbMigration
+    public partial class databaseagain : DbMigration
     {
         public override void Up()
         {
@@ -21,6 +21,23 @@ namespace ShopEx01.Data.Migrations
                         UpdatedBy = c.String(maxLength: 256),
                         MetaKeyword = c.String(maxLength: 256),
                         MetaDescription = c.String(maxLength: 256),
+                        Status = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
+                "dbo.ContactDetails",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false, maxLength: 250),
+                        Phone = c.String(maxLength: 50),
+                        Email = c.String(maxLength: 250),
+                        Website = c.String(maxLength: 250),
+                        Address = c.String(maxLength: 250),
+                        Other = c.String(),
+                        Lat = c.Double(),
+                        Lng = c.Double(),
                         Status = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID);
@@ -123,6 +140,7 @@ namespace ShopEx01.Data.Migrations
                         HotFlag = c.Boolean(),
                         ViewCount = c.Int(),
                         Tags = c.String(),
+                        Quantity = c.Int(nullable: false),
                         CreatedDate = c.DateTime(),
                         CreatedBy = c.String(maxLength: 256),
                         UpdatedDate = c.DateTime(),
@@ -291,10 +309,13 @@ namespace ShopEx01.Data.Migrations
                     {
                         ID = c.Int(nullable: false, identity: true),
                         Name = c.String(nullable: false, maxLength: 256),
+                        Alias = c.String(nullable: false, maxLength: 256),
                         Description = c.String(maxLength: 256),
                         Image = c.String(maxLength: 256),
                         Url = c.String(maxLength: 256),
                         DisplayOrder = c.Int(),
+                        CreatedDate = c.DateTime(),
+                        UpdatedDate = c.DateTime(),
                         Status = c.Boolean(nullable: false),
                         Content = c.String(),
                     })
@@ -442,6 +463,7 @@ namespace ShopEx01.Data.Migrations
             DropTable("dbo.MenuGroups");
             DropTable("dbo.Footers");
             DropTable("dbo.Errors");
+            DropTable("dbo.ContactDetails");
             DropTable("dbo.Brands");
         }
     }
