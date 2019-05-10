@@ -1,4 +1,6 @@
-﻿@model ShopEx01.Web.Models.ContactDetailViewModel
+﻿@model ShopEx01.Web.Models.FeedbackViewModel
+@using BotDetect.Web.Mvc;
+
 
 @{
     ViewBag.Title = "Liên hệ";
@@ -13,10 +15,12 @@
         height: 500px;
     }
 </style>
-<input type="hidden" id="hidAddress" value="@Model.Name<br />Điện thoại:@Model.Phone <br>Địa chỉ: @Model.Address" />
-<input type="hidden" id="hidLat" value="@Model.Lat" />
-<input type="hidden" id="hidLng" value="@Model.Lng" />
-<input type="hidden" id="hidName" value="@Model.Name" />
+<link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl" rel="stylesheet" type="text/css" />
+<input type="hidden" id="hidAddress" value="@Model.ContactDetail.Name<br />Điện thoại:@Model.ContactDetail.Phone <br>Địa chỉ: @Model.ContactDetail.Address" />
+<input type="hidden" id="hidLat" value="@Model.ContactDetail.Lat" />
+<input type="hidden" id="hidLat" value="@Model.ContactDetail.Lat" />
+<input type="hidden" id="hidLng" value="@Model.ContactDetail.Lng" />
+<input type="hidden" id="hidName" value="@Model.ContactDetail.Name" />
 
 <div id="contact-page" class="container">
     <div class="bg">
@@ -33,10 +37,10 @@
                     <h2 class="title text-center">Thông tin liên hệ</h2>
                     <address class="title text-center">
                         <p>E-Shopper Inc.</p>
-                        <p> @Model.Address </p>
+                        <p> @Model.ContactDetail.Address </p>
                         <p>Tp.Ho Chi Minh</p>
-                        <p>SĐT: @Model.Phone</p>
-                        <p>Email: &nbsp; <a href="mailto:@(Model.Email)"> @Model.Email</a> </p>
+                        <p>SĐT: @Model.ContactDetail.Phone</p>
+                        <p>Email: &nbsp; <a href="mailto:@(Model.ContactDetail.Email)"> @Model.ContactDetail.Email</a> </p>
                     </address>
                     <div class="social-networks">
                         <h2></h2>
@@ -63,25 +67,50 @@
             <div class="col-sm-9">
                 <div class="contact-form">
                     <h2></h2>
-                    <h2 class="title text-center">Get In Touch</h2>
-                    <div class="status alert alert-success" style="display: none"></div>
-                    <form id="main-contact-form" class="contact-form row" name="contact-form" method="post">
-                        <div class="form-group col-md-6">
-                            <input type="text" name="name" class="form-control" required="required" placeholder="Tên của bạn">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <input type="text" name="email" class="form-control" required="required" placeholder="Email của bạn">
-                        </div>
-                        <div class="form-group col-md-12">
-                            <input type="text" name="subject" class="form-control" required="required" placeholder="Vấn đề phản hồi của bạn">
-                        </div>
-                        <div class="form-group col-md-12">
-                            <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Phản hồi của bạn"></textarea>
-                        </div>
+                    <h2 class="title text-center">Gửi thông tin liên hệ</h2>
+                    @using (Html.BeginForm("SendFeedback", "Contact", FormMethod.Post))
+                    {
+                        if (ViewData["SuccessMsg"] != null)
+                        {
+                            <div class="alert alert-success" role="alert">
+                                <strong>Chúc mừng bạn! </strong> gửi phản hồi thành công.
+                                <br />Chúng tôi sẽ liên hệ lại sớm nhất có thể.
+                            </div>
+                        }
+                        @Html.ValidationSummary(false, "", new { @class = "error" });
+                        <p>Tên của bạn:</p>
+                        @Html.TextBoxFor(model => model.Name, new { @class = "textbox" });
+                        <p>Email của bạn:</p>
+                        @Html.TextBoxFor(model => model.Email, new { @class = "textbox" });
+                        <p>Tin nhắn của bạn cho shop:</p>
+                        @Html.TextAreaFor(model => model.Message);
+
+                        MvcCaptcha contactCaptcha = new MvcCaptcha("contactCaptcha");
+                        @Html.Captcha(contactCaptcha)
+                        @Html.TextBox("CaptchaCode")
+
                         <div class="form-group col-md-12">
                             <input type="submit" name="submit" class="btn btn-primary pull-right" value="Gửi">
                         </div>
-                    </form>
+                    }
+                    @*<div class="status alert alert-success" style="display: none"></div>
+                        <form id="main-contact-form" class="contact-form row" name="contact-form" method="post">
+                            <div class="form-group col-md-6">
+                                <input type="text" name="name" class="form-control" required="required" placeholder="Tên của bạn">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="email" class="form-control" required="required" placeholder="Email của bạn">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <input type="text" name="subject" class="form-control" required="required" placeholder="Vấn đề phản hồi của bạn">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Phản hồi của bạn"></textarea>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <input type="submit" name="submit" class="btn btn-primary pull-right" value="Gửi">
+                            </div>
+                        </form>*@
                 </div>
             </div>
 

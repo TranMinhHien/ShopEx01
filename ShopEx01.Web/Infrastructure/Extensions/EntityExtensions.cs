@@ -1,5 +1,6 @@
 ﻿using ShopEx01.Model.Models;
 using ShopEx01.Web.Models;
+using System;
 
 namespace ShopEx01.Web.Infrastructure.Extensions
 {
@@ -23,8 +24,8 @@ namespace ShopEx01.Web.Infrastructure.Extensions
             postCategory.MetaKeyword = postCategoryVm.MetaKeyword;
             postCategory.MetaDescription = postCategoryVm.MetaDescription;
             postCategory.Status = postCategoryVm.Status;
-
         }
+
         public static void UpdateProductCategory(this ProductCategory productCategory, ProductCategoryViewModel productCategoryVm)
         {
             productCategory.ID = productCategoryVm.ID;
@@ -43,8 +44,8 @@ namespace ShopEx01.Web.Infrastructure.Extensions
             productCategory.MetaKeyword = productCategoryVm.MetaKeyword;
             productCategory.MetaDescription = productCategoryVm.MetaDescription;
             productCategory.Status = productCategoryVm.Status;
-
         }
+
         public static void UpdatePost(this Post post, PostViewModel postVm)
         {
             post.ID = postVm.ID;
@@ -103,7 +104,7 @@ namespace ShopEx01.Web.Infrastructure.Extensions
             slide.Description = slideVm.Description;
             slide.Image = slideVm.Image;
             slide.Url = slideVm.Url;
-            slide.Content = slideVm.Content; 
+            slide.Content = slideVm.Content;
             slide.DisplayOrder = slideVm.DisplayOrder;
             slide.CreatedDate = slideVm.CreatedDate;
             slide.Status = slideVm.Status;
@@ -122,7 +123,16 @@ namespace ShopEx01.Web.Infrastructure.Extensions
             brand.UpdatedBy = brandVm.UpdatedBy;
             brand.MetaKeyword = brandVm.MetaKeyword;
             brand.MetaDescription = brandVm.MetaDescription;
-            brand.Status = brandVm.Status;            
+            brand.Status = brandVm.Status;
+        }
+
+        public static void UpdateFeedback(this Feedback feedback, FeedbackViewModel feedbackVm)
+        {
+            feedback.Name = feedbackVm.Name;
+            feedback.Email = feedbackVm.Email;
+            feedback.Message = feedbackVm.Message;
+            feedback.Status = feedbackVm.Status;
+            feedback.CreatedDate = DateTime.Now;
         }
     }
 }

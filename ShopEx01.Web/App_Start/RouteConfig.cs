@@ -9,6 +9,10 @@ namespace ShopEx01.Web
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // BotDetect requests must not be routed 
+            routes.IgnoreRoute("{*botdetect}",
+            new { botdetect = @"(.*)BotDetectCaptcha\.ashx" });
+
             routes.MapRoute(
                 name: "Confirm Order",
                 url: "xac-nhan-don-hang.html",
