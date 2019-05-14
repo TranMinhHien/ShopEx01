@@ -62,17 +62,13 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201905100623146_databaseagain.cs" />
-    <Compile Include="Migrations\201905100623146_databaseagain.Designer.cs">
-      <DependentUpon>201905100623146_databaseagain.cs</DependentUpon>
+    <Compile Include="Migrations\201905141617575_againDatabase.cs" />
+    <Compile Include="Migrations\201905141617575_againDatabase.Designer.cs">
+      <DependentUpon>201905141617575_againDatabase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905101343049_feedback.cs" />
-    <Compile Include="Migrations\201905101343049_feedback.Designer.cs">
-      <DependentUpon>201905101343049_feedback.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905101345073_feedback2.cs" />
-    <Compile Include="Migrations\201905101345073_feedback2.Designer.cs">
-      <DependentUpon>201905101345073_feedback2.cs</DependentUpon>
+    <Compile Include="Migrations\201905141623128_addatabase1.cs" />
+    <Compile Include="Migrations\201905141623128_addatabase1.Designer.cs">
+      <DependentUpon>201905141623128_addatabase1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -116,14 +112,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905100623146_databaseagain.resx">
-      <DependentUpon>201905100623146_databaseagain.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905141617575_againDatabase.resx">
+      <DependentUpon>201905141617575_againDatabase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905101343049_feedback.resx">
-      <DependentUpon>201905101343049_feedback.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905101345073_feedback2.resx">
-      <DependentUpon>201905101345073_feedback2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905141623128_addatabase1.resx">
+      <DependentUpon>201905141623128_addatabase1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
