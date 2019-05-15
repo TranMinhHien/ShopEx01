@@ -1,5 +1,7 @@
 ﻿namespace ShopEx01.Data.Migrations
 {
+    using ShopEx01.Model.Models;
+    using System.Collections.Generic;
     using System.Data.Entity.Migrations;
     using System.Data.Entity.Validation;
     using System.Diagnostics;
@@ -86,17 +88,17 @@
 
         private void CreateBrand(ShopEx01DbContext context)
         {
-            //if (context.Brands.Count() == 0)
-            //{
-            //    List<Brand> listBrand = new List<Brand>()
-            //    {
-            //        new Brand() {Name="Dell", Status=true, Alias="dell"},
-            //        new Brand() {Name="HP", Status=true, Alias="hp"},
-            //        new Brand() {Name="ASUS", Status=true, Alias="asus"}
-            //    };
-            //    context.Brands.AddRange(listBrand);
-            //    context.SaveChanges();
-            //}
+            if (context.Brands.Count() == 0)
+            {
+                List<Brand> listBrand = new List<Brand>()
+                {
+                    new Brand() {Name="Dell", Status=true, Alias="dell"},
+                    new Brand() {Name="HP", Status=true, Alias="hp"},
+                    new Brand() {Name="ASUS", Status=true, Alias="asus"}
+                };
+                context.Brands.AddRange(listBrand);
+                context.SaveChanges();
+            }
         }
 
         private void CreatePage(ShopEx01DbContext context)
@@ -133,37 +135,37 @@
 
         private void CreateContactDetail(ShopEx01DbContext context)
         {
-            if (context.ContactDetails.Count() == 0)
-            {
-                try
-                {
-                    var contactDetail = new ShopEx01.Model.Models.ContactDetail()
-                    {
-                        Name = "ShopEx01",
-                        Address = "Làng ĐH, Q.Thủ Đức",
-                        Email = "shopex01@gmail.com",
-                        Lat = 10.873629,
-                        Lng = 106.799634,
-                        Phone = "0985617988",
-                        Website = "http://shopex01vn",
-                        Other = "",
-                        Status = true
-                    };
-                    context.ContactDetails.Add(contactDetail);
-                    context.SaveChanges();
-                }
-                catch (DbEntityValidationException ex)
-                {
-                    foreach (var eve in ex.EntityValidationErrors)
-                    {
-                        Trace.WriteLine($"Entity of type \"{eve.Entry.Entity.GetType().Name}\" in state \"{eve.Entry.State}\" has the following validation error.");
-                        foreach (var ve in eve.ValidationErrors)
-                        {
-                            Trace.WriteLine($"- Property: \"{ve.PropertyName}\", Error: \"{ve.ErrorMessage}\"");
-                        }
-                    }
-                }
-            }
+            //if (context.ContactDetails.Count() == 0)
+            //{
+            //    try
+            //    {
+            //        var contactDetail = new ShopEx01.Model.Models.ContactDetail()
+            //        {
+            //            Name = "ShopEx01",
+            //            Address = "Làng ĐH, Q.Thủ Đức",
+            //            Email = "shopex01@gmail.com",
+            //            Lat = 10.873629,
+            //            Lng = 106.799634,
+            //            Phone = "0985617988",
+            //            Website = "http://shopex01vn",
+            //            Other = "",
+            //            Status = true
+            //        };
+            //        context.ContactDetails.Add(contactDetail);
+            //        context.SaveChanges();
+            //    }
+            //    catch (DbEntityValidationException ex)
+            //    {
+            //        foreach (var eve in ex.EntityValidationErrors)
+            //        {
+            //            Trace.WriteLine($"Entity of type \"{eve.Entry.Entity.GetType().Name}\" in state \"{eve.Entry.State}\" has the following validation error.");
+            //            foreach (var ve in eve.ValidationErrors)
+            //            {
+            //                Trace.WriteLine($"- Property: \"{ve.PropertyName}\", Error: \"{ve.ErrorMessage}\"");
+            //            }
+            //        }
+            //    }
+            //}
         }
     }
 }

@@ -84,8 +84,8 @@
             <img src="~/Assets/client/images/product-details/rating.png" alt="" />
             <span>
                 <span>VNĐ @(Model.Price == 0 ? "Liên hệ" : Model.Price.ToString("N0"))</span>
-
-                <a class="now-get get-cart-in" href="/them-gio-hang/@Model.ID"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng</a>
+                <a class="now-get get-cart-in btnAddToCart" href="#" data-id="@Model.ID">Thêm vào giỏ hàng</a>
+                
             </span>
             <p><b>@Model.Quantity</b> Sản phẩm trong kho</p>
             <p><b>Tình trạng:</b> New</p>

@@ -1,19 +1,16 @@
 ﻿using BotDetect.Web.Mvc;
-using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Mvc;
+using Microsoft.Owin.Security;
 using ShopEx01.Common;
 using ShopEx01.Model.Models;
 using ShopEx01.Web.App_Start;
 using ShopEx01.Web.Models;
-using Microsoft.Owin.Security;
-using Microsoft.AspNet.Identity;
+using System;
 using System.Security.Claims;
+using System.Threading.Tasks;
+using System.Web;
+using System.Web.Mvc;
 
 namespace ShopEx01.Web.Controllers
 {
@@ -51,10 +48,11 @@ namespace ShopEx01.Web.Controllers
                 _userManager = value;
             }
         }
+
         public AccountController()
         {
-
         }
+
         // GET: Account
         public ActionResult Login(string returnUrl)
         {
@@ -93,7 +91,6 @@ namespace ShopEx01.Web.Controllers
             return View(model);
         }
 
-
         [HttpGet]
         public ActionResult Register()
         {
@@ -127,11 +124,9 @@ namespace ShopEx01.Web.Controllers
                     FullName = model.FullName,
                     PhoneNumber = model.PhoneNumber,
                     Address = model.Address
-
                 };
 
                 await _userManager.CreateAsync(user, model.Password);
-
 
                 var adminUser = await _userManager.FindByEmailAsync(model.Email);
                 if (adminUser != null)
@@ -143,7 +138,6 @@ namespace ShopEx01.Web.Controllers
 
                 MailHelper.SendMail(adminUser.Email, "Đăng ký thành công", content);
 
-
                 ViewData["SuccessMsg"] = "Đăng ký thành công";
             }
 
@@ -151,7 +145,6 @@ namespace ShopEx01.Web.Controllers
         }
 
         [HttpPost]
-
         [ValidateAntiForgeryToken]
         public ActionResult LogOut()
         {

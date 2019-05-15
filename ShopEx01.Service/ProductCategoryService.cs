@@ -73,7 +73,7 @@ namespace ShopEx01.Service
 
         public IEnumerable<ProductCategory> GetParent()
         {
-            return _ProductCategoryRepository.GetMulti(x => x.Status && x.ParentID == null);
+            return _ProductCategoryRepository.GetMulti(x => x.Status && x.ParentID != null);
         }
 
         public IEnumerable<ProductCategory> GetProductCategory()
